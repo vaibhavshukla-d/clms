@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #f6f1f1;
+  margin: 0; /* Reset the default margin */
+  padding: 0; /* Reset the default padding */
+}
+
+.page-container {
+  background-color: #08ebfb;
+  padding-left: 5rem;
+}

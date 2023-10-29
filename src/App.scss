@@ -1,0 +1,66 @@
+$base-color: #cd212a;
+$base-primary: #0095ff;
+$gray: #d1d8e0;
+$icon-color: #87878d;
+$white: #fff;
+
+section {
+  margin-left: 5rem;
+  margin-right: 0.8rem;
+  margin-top: 1rem;
+}
+.header {
+  background-color: $white;
+  height: 2.5rem;
+  border-bottom: $gray 1px solid;
+  text-align: left;
+  padding-left: 1rem;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  h1{
+    font-size: 0.80rem;
+    font-weight: 500;
+    color: $icon-color;
+  }
+}
+
+svg {
+  font-size: 1.5rem; // 1.5 * $base-font-size
+  align-self: center; // Vertically center the icon
+  color: $icon-color;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 2.5rem;
+  left: 0;
+  width: 15.625rem; // 250px / 16px = 15.625rem
+  height: 100%;
+  background-color: #ffffff;
+  color: #040303;
+  padding: 1.25rem; // 20px / 16px = 1.25rem
+  transition: transform 0.3s ease-in-out;
+
+  &.collapsed {
+    transform: translateX(-11.5rem);
+  }
+
+  .sidebar-header {
+    display: flex;
+    justify-content: space-between; // Align items to the space between
+
+    .toggle-button {
+      cursor: pointer;
+      display: flex;
+    }
+
+    img {
+      align-self: center; // Vertically center the image
+    }
+
+  }
+}
+
