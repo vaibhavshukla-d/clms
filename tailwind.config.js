@@ -13,7 +13,7 @@ export default {
           foreground: "hsl(var(--destructive-foreground))",
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))",
+          DEFAULT: "#4D4D4D",
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {

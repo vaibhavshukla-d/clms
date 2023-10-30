@@ -1,27 +1,31 @@
 $base-color: #cd212a;
 $base-primary: #0095ff;
 $gray: #d1d8e0;
-$icon-color: #87878d;
+$icon-color: #626264;
 $white: #fff;
 
 section {
   margin-left: 5rem;
   margin-right: 0.8rem;
-  margin-top: 1rem;
+  margin-top: 3rem;
+  height: 100%;
 }
 .header {
   background-color: $white;
+  top: 0%;
+  position: fixed;
   height: 2.5rem;
-  border-bottom: $gray 1px solid;
+  border-bottom: #c2c2c8 1px solid;
   text-align: left;
   padding-left: 1rem;
   display: flex;
   justify-content: left;
   align-items: center;
+  width: 100%;
 }
 h1 {
-  font-size: 0.8rem;
-  font-weight: 500;
+  font-size: 0.6rem;
+  font-weight: 900;
   color: $icon-color;
 }
 
@@ -61,4 +65,10 @@ svg {
       align-self: center; // Vertically center the image
     }
   }
+}
+
+.pie-chart-container {
+  margin-top: 2rem; /* Add space between the header and pie chart */
+  position: relative; /* Keep the pie chart container in the document flow */
+  z-index: 0; /* Lower z-index to position it behind the header */
 }

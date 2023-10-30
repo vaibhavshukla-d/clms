@@ -29,7 +29,7 @@ function App() {
 
     const resetTimeout = () => {
       clearTimeout(mouseMoveTimeout);
-      mouseMoveTimeout = setTimeout(setInactive, 30000); // 30 seconds
+      mouseMoveTimeout = setTimeout(setInactive, 30000000); // 30 seconds
     };
 
     // Add an event listener to track mouse movement
@@ -50,7 +50,7 @@ function App() {
     <Routes>
       {isAuth === "true" ? (
         <Route path="/" element={<Layout />}>
-          <Route path="/dashboard" element={<DashboardPage />} />
+          {/* <Route path="/dashboard" element={<DashboardPage />} /> */}
           <Route path="/bullionrate" element={<BullionRate />} />
           <Route path="/login" element={<DashboardPage />} />
         </Route>

@@ -1,11 +1,9 @@
-
 const Header = () => {
-    return (
-        <div className="header">
-
-            <h1 className="content-center">Co-Lending Mangement System</h1>
-        </div>
-    )
-}
+  return (
+    <div className="header">
+      <h1 className="font-medium">CO-LENDING MANGEMENT SYSTEM</h1>
+    </div>
+  );
+};
 
 export default Header;
