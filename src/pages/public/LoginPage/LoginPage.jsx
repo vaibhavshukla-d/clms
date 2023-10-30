@@ -63,7 +63,8 @@ function LoginPage() {
         console.log(responseData);
 
         if (responseData[0]?.Status[0] == 1) {
-          localStorage.setItem("isAuthenticated", "true");
+        //   localStorage.setItem("isAuthenticated", "true");
+          sessionStorage.setItem('isAuthenticated', 'true');
           //console.log("test", localStorage.getItem("isAuthenticated"));
           toast.success("Login Success", {
             position: "top-right",

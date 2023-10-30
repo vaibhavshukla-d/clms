@@ -18,7 +18,7 @@ const Sidebar = () => {
   };
 
   function handleLogout() {
-    localStorage.setItem("isAuthenticated", false);
+    sessionStorage.setItem("isAuthenticated", false);
     navigate("/login");
   }
 

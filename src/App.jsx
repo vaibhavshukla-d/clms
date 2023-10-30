@@ -6,9 +6,10 @@ import LoginPage from "./pages/public/LoginPage/LoginPage";
 import { useEffect, useState } from "react";
 import BullionRate from "@/pages/protected/BullionRate/BullionRatePage.jsx";
 import NotFoundPage from "@/pages/public/NotFoundPage/NotFoundPage.jsx";
+import { fetchAndSetSystemCodeData } from "./utils/fetchAndSetSystemCodeData";
 
 function App() {
-  const isAuth = localStorage.getItem("isAuthenticated");
+  const isAuth = sessionStorage.getItem("isAuthenticated");
   const navigate = useNavigate();
   const [mouseMoved, setMouseMoved] = useState(false);
 
@@ -17,6 +18,10 @@ function App() {
       navigate("/login");
     }
   }, [isAuth, navigate]);
+
+  useEffect(() => {
+    fetchAndSetSystemCodeData();
+  }, []);
 
   useEffect(() => {
     let mouseMoveTimeout;
