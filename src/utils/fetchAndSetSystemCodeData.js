@@ -12,6 +12,7 @@ export async function fetchAndSetSystemCodeData() {
   const systemCodeData = localStorage.getItem("systemCodeData");
 
   // localStorage.setItem("isAuthenticated", "true");
+  console.log(localStorage.getItem("systemCodeData"));
 
   if (!systemCodeData) {
     try {
@@ -20,8 +21,11 @@ export async function fetchAndSetSystemCodeData() {
       });
       if (response.status === 200) {
         const data = response.data;
-        // console.log("data:", JSON.stringify(data));
-        localStorage.setItem("SystemCodeDetail", JSON.stringify(data));
+        // console.log("data:", JSON.stringify(data[0].SystemCodeList));
+        localStorage.setItem(
+          "SystemCodeDetail",
+          JSON.stringify(data[0].SystemCodeList)
+        );
       } else {
         console.error("Failed to fetch system code data from the API");
       }
