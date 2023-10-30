@@ -2,7 +2,9 @@ import {useState} from 'react';
 import {TbSquareRoundedChevronsLeft, TbSquareRoundedChevronsRight} from 'react-icons/tb';
 import {HiOutlineLogout} from 'react-icons/hi';
 import logo from '../assets/CS_Logo_web.png';
-import { useNavigate  } from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
+import {BiHomeAlt2} from "react-icons/bi";
+import {AiOutlineGold} from "react-icons/ai";
 
 
 const Sidebar = () => {
@@ -28,15 +30,40 @@ const Sidebar = () => {
                             <div>
                                 <TbSquareRoundedChevronsRight/>
                             </div>
+                            <div className="mt-10">
+                                <BiHomeAlt2 />
+                            </div>
+                            <div className="mt-5">
+                                <AiOutlineGold />
+                            </div>
+                            <div className="mt-96">
+                                <button className="flex flex-row justify-center align-bottom"
+                                        onClick={handleLogout}
+                                >
+                                    <HiOutlineLogout/>
+                                </button>
+                            </div>
                         </div>
                     ) : (
-                        <TbSquareRoundedChevronsLeft/>
+                        <div>
+                            <TbSquareRoundedChevronsLeft/>
+                        </div>
                     )}
 
                 </div>
             </div>
             <br/>
-            <button className="flex flex-row justify-center align-bottom"
+            <NavLink
+
+                to="/dashboard"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : ""
+                }
+            >
+                Dashboard
+            </NavLink>
+
+            <button className="flex flex-row justify-center align-bottom mt-96 "
             onClick={handleLogout}
             >
                 <HiOutlineLogout/>
