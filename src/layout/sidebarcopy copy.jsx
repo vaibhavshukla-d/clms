@@ -26,21 +26,17 @@ const Sidebar = () => {
     <div className={`sidebar ${collapsed ? "collapsed" : ""}`}>
       <div className="sidebar-header">
         <img src={logo} alt="My Logo" width="75" height="31" />
-        <div className="toggle-button">
+        <div className="toggle-button" onClick={toggleSidebar}>
           {collapsed ? (
             <div className="">
-              <div onClick={toggleSidebar}>
+              <div>
                 <TbSquareRoundedChevronsRight />
               </div>
               <div className="mt-10">
-                <NavLink to="/dashboard">
-                  <BiHomeAlt2 />
-                </NavLink>
+                <BiHomeAlt2 />
               </div>
               <div className="mt-5">
-                <NavLink to="/bullionrate">
-                  <AiOutlineGold />
-                </NavLink>
+                <AiOutlineGold />
               </div>
               <div className="mt-96">
                 <button
@@ -52,46 +48,29 @@ const Sidebar = () => {
               </div>
             </div>
           ) : (
-            <div onClick={toggleSidebar}>
+            <div>
               <TbSquareRoundedChevronsLeft />
             </div>
           )}
         </div>
       </div>
       <br />
-      <div className="mt-4">
-        <div className="flex">
-          <BiHomeAlt2 className="mr-2" />
-          <NavLink
-            to="/dashboard"
-            className={({ isActive, isPending }) =>
-              isPending ? "pending" : isActive ? "active" : ""
-            }
-          >
-            <h1>Dashboard</h1>
-          </NavLink>
-        </div>
-        <div className="flex mt-5">
-          <AiOutlineGold className="mr-2 " />
-          <NavLink
-            to="/bullionrate"
-            className={({ isActive, isPending }) =>
-              isPending ? "pending" : isActive ? "active" : ""
-            }
-          >
-            <h1>Bullion Rate</h1>
-          </NavLink>
-        </div>
-        <button
-          className="flex flex-row justify-center align-bottom mt-96 "
-          onClick={handleLogout}
-        >
-          <HiOutlineLogout />
-          <div className="ml-2">
-            <h1>Logout</h1>{" "}
-          </div>
-        </button>
-      </div>
+      <NavLink
+        to="/dashboard"
+        className={({ isActive, isPending }) =>
+          isPending ? "pending" : isActive ? "active" : ""
+        }
+      >
+        Dashboard
+      </NavLink>
+
+      <button
+        className="flex flex-row justify-center align-bottom mt-96 "
+        onClick={handleLogout}
+      >
+        <HiOutlineLogout />
+        <div className="ml-3">Logout</div>
+      </button>
     </div>
   );
 };

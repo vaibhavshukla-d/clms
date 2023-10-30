@@ -18,11 +18,11 @@ section {
   display: flex;
   justify-content: left;
   align-items: center;
-  h1{
-    font-size: 0.80rem;
-    font-weight: 500;
-    color: $icon-color;
-  }
+}
+h1 {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: $icon-color;
 }
 
 svg {
@@ -60,7 +60,5 @@ svg {
     img {
       align-self: center; // Vertically center the image
     }
-
   }
 }
-
