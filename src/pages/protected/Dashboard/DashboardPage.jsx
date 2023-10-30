@@ -212,7 +212,7 @@ function DashboardPage() {
                 />
                 <Bar
                   dataKey="Rejected"
-                  fill="#0095ff"
+                  fill="#cd212a"
                   activeBar={<Rectangle fill="gold" stroke="purple" />}
                 />
               </BarChart>
