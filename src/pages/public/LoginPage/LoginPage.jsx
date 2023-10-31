@@ -127,8 +127,6 @@ function LoginPage() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="bg-white p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 rounded-lg shadow-md w-full sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-3/6 flex">
           <div className="w-2/4 flex items-center justify-center">
-            {" "}
-            {/* Centered the image */}
             <img
               src={logo}
               alt="Logo"
@@ -137,7 +135,7 @@ function LoginPage() {
               height={200}
             />
           </div>
-          <div className="w-0.5 bg-gray-300 h-60 my-2 mx-4"></div>
+          <div className="w-0.5 bg-gray-300 h-80 my-2 mx-4"></div>
           <div className="w-2/4 pl-8">
             <div className="flex justify-between flex-wrap items-center">
               <h2 className="text-xl text-left sm:text-xl md:text-xl lg:text-2xl xl:text-3xl font-semibold text-gray-700 mb-4">
