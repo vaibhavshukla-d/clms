@@ -143,22 +143,6 @@ function LoginPage() {
               <h2 className="text-xl text-left sm:text-xl md:text-xl lg:text-2xl xl:text-3xl font-semibold text-gray-700 mb-4">
                 Login
               </h2>
-              <div className="items-center justify-center align-center">
-                <h2 className="flex-wrap text-sm  font-semibold text-gray-700">
-                  Language:
-                </h2>
-                <select
-                  className="text-sm"
-                  value={selectedLanguage}
-                  onChange={(e) => changeLanguage(e.target.value)}
-                >
-                  {languages.map((language) => (
-                    <option key={language.code} value={language.code}>
-                      {language.name}
-                    </option>
-                  ))}
-                </select>
-              </div>
             </div>
 
             <div className="mb-4">
@@ -194,6 +178,22 @@ function LoginPage() {
             >
               Login
             </button>
+            <div className="flex items-right justify-end align-center mt-8">
+              <h2 className="flex-wrap text-sm  font-semibold text-gray-700">
+                Language:
+              </h2>
+              <select
+                className="text-sm"
+                value={selectedLanguage}
+                onChange={(e) => changeLanguage(e.target.value)}
+              >
+                {languages.map((language) => (
+                  <option key={language.code} value={language.code}>
+                    {language.name}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
         </div>
       </div>
