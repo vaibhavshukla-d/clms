@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import AuthContext from "../../../context/AuthContext/AuthContext.js";
 import React, { PureComponent, useCallback, useState } from "react";
 import { PieChart, Pie, Sector, ResponsiveContainer } from "recharts";
 import {
@@ -12,6 +11,7 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
+import AuthContext from "../../../context/AuthContext/AuthContext.js";
 
 const data = [
   { name: "Approve", value: 400 },
@@ -119,7 +119,7 @@ const renderActiveShape = (props) => {
 };
 
 function DashboardPage() {
-  const { Auth } = useContext(AuthContext);
+  const { auth } = useContext(AuthContext);
   const [activeIndex, setActiveIndex] = useState(0);
   const onPieEnter = useCallback(
     (_, index) => {
@@ -127,7 +127,7 @@ function DashboardPage() {
     },
     [setActiveIndex]
   );
-  console.log("test", Auth);
+  console.log("isAUth", auth);
   return (
     <section>
       <div className="w-full h-1/8 bg-white rounded-md p-4 flex justify-center">

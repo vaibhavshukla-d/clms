@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import {
   TbSquareRoundedChevronsLeft,
   TbSquareRoundedChevronsRight,
@@ -8,10 +8,12 @@ import logo from "../assets/CS_Logo_web.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import { BiHomeAlt2 } from "react-icons/bi";
 import { AiOutlineGold } from "react-icons/ai";
+import AuthContext from "../context/AuthContext/AuthContext";
 
 const Sidebar = () => {
   const [collapsed, setCollapsed] = useState(true);
   const navigate = useNavigate();
+  const { setAuth } = useContext(AuthContext);
 
   const toggleSidebar = () => {
     setCollapsed(!collapsed);
@@ -19,6 +21,7 @@ const Sidebar = () => {
 
   function handleLogout() {
     sessionStorage.setItem("isAuthenticated", false);
+    setAuth(false);
     navigate("/login");
   }
 
@@ -88,7 +91,7 @@ const Sidebar = () => {
         >
           <HiOutlineLogout />
           <div className="ml-2">
-            <h1>Logout</h1>{" "}
+            <h1>Logout</h1>
           </div>
         </button>
       </div>

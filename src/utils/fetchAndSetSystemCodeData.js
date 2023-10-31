@@ -12,7 +12,7 @@ export async function fetchAndSetSystemCodeData() {
   const systemCodeData = localStorage.getItem("systemCodeData");
 
   // localStorage.setItem("isAuthenticated", "true");
-  console.log(localStorage.getItem("systemCodeData"));
+  // console.log(localStorage.getItem("systemCodeData"));
 
   if (!systemCodeData) {
     try {
