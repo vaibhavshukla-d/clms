@@ -30,7 +30,7 @@ export default function BullionRate() {
       effectiveDate: "",
       operatorId: "",
     });
-    setBullionData([]);
+    setBullionData("");
   };
 
   const handleSaveClick = async () => {
@@ -112,6 +112,7 @@ export default function BullionRate() {
         pauseOnHover: true,
         draggable: false,
       });
+      return null;
     } else if (user.effectiveDate == "" || user.effectiveDate == null) {
       toast.error("Please Enter Effective Date", {
         position: "top-right",
