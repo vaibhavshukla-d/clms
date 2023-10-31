@@ -5,12 +5,27 @@ import AuthContext from "../../../context/AuthContext/AuthContext.js";
 import axios from "@/api/axios.js";
 import { useNavigate } from "react-router-dom";
 import CryptoJS from "crypto-js";
+import { useTranslation } from "react-i18next";
 
 const secretKey = "706b889da35c4992b71f439d3d70f19a";
-
 const URL = "/api";
+const languages = [
+  {
+    code: "en",
+    name: "English",
+    country_code: "gb",
+  },
+  {
+    code: "jp",
+    name: "Japanese",
+    country_code: "jp",
+  },
+];
 
 function LoginPage() {
+  const { t, i18n } = useTranslation("global"); // i18n is used to set the language
+  const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
+
   const { setAuth } = useContext(AuthContext);
   const userRef = useRef();
   const [user, setUser] = useState("");
@@ -23,6 +38,11 @@ function LoginPage() {
   useEffect(() => {
     userRef.current.focus();
   }, []);
+
+  const changeLanguage = (languageCode) => {
+    i18n.changeLanguage(languageCode);
+    setSelectedLanguage(languageCode);
+  };
 
   const handleClick = async (e) => {
     e.preventDefault();
@@ -119,12 +139,31 @@ function LoginPage() {
           </div>
           <div className="w-0.5 bg-gray-300 h-60 my-2 mx-4"></div>
           <div className="w-2/4 pl-8">
-            <h2 className="text-xl text-center sm:text-xl md:text-xl lg:text-2xl xl:text-3xl font-semibold text-gray-700 mb-4">
-              Login
-            </h2>
+            <div className="flex justify-between flex-wrap items-center">
+              <h2 className="text-xl text-left sm:text-xl md:text-xl lg:text-2xl xl:text-3xl font-semibold text-gray-700 mb-4">
+                Login
+              </h2>
+              <div className="items-center justify-center align-center">
+                <h2 className="flex-wrap text-sm  font-semibold text-gray-700">
+                  Language:
+                </h2>
+                <select
+                  className="text-sm"
+                  value={selectedLanguage}
+                  onChange={(e) => changeLanguage(e.target.value)}
+                >
+                  {languages.map((language) => (
+                    <option key={language.code} value={language.code}>
+                      {language.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
             <div className="mb-4">
               <label className="block text-gray-600 text-sm font-medium">
-                Login ID
+                {t("LoginID")}
               </label>
               <input
                 type="text"
@@ -138,7 +177,7 @@ function LoginPage() {
             </div>
             <div className="mb-4">
               <label className="block text-gray-600 text-sm font-medium">
-                Password
+                {t("Password")}
               </label>
               <input
                 type="password"

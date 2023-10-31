@@ -8,6 +8,7 @@ import BullionRate from "@/pages/protected/BullionRate/BullionRatePage.jsx";
 import NotFoundPage from "@/pages/public/NotFoundPage/NotFoundPage.jsx";
 import { fetchAndSetSystemCodeData } from "./utils/fetchAndSetSystemCodeData";
 
+
 function App() {
   const isAuth = sessionStorage.getItem("isAuthenticated");
   const navigate = useNavigate();
